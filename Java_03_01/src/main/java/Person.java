@@ -56,27 +56,20 @@ public class Person {
   
        //List <Person> per = new ArrayList<>(man);
        int len = m.size();
+      // int index =0;
+      // m.get((index+0)%m.size()).age = ;
        
-       for(int index=0;index<len-1;++index){
-           for(int j=index;j<len-1;++j){
-               if(m.get((index+0)%m.size()).age > m.get((index+1)%m.size()).age){
-                  SwapString(m.get((index+0)%m.size()).firstName,m.get((index+1)%m.size()).firstName);
-                  SwapString(m.get((index+0)%m.size()).lastName,m.get((index+1)%m.size()).lastName);
-                  SwapInteger(m.get((index+0)%m.size()).age,m.get((index+1)%m.size()).age);
-                  SwapString(m.get((index+0)%m.size()).date,m.get((index+1)%m.size()).date);
+       for(int j= 0;j<len;j++){
+           for(int index=0;index<len;index++){
+               if(m.get(index%m.size()).age > m.get(index+1).age){
+                  SwapString(m.get(index%m.size()).firstName,m.get(index+1).firstName);
+                  SwapString(m.get(index%m.size()).lastName,m.get(index+1).lastName);
+                  SwapInteger(m.get(index%m.size()).age,m.get(index+1).age);
+                  SwapString(m.get(index%m.size()).date,m.get(index+1).date);
 
-               }
-               
-           }
-           
-       }
-       System.out.println();
-       System.out.println();
-       System.out.println();
-       for(int i =0;i<len;i++){
-           (m.get((i)%m.size())).printOut(m.get((i)%m.size()));
-       }
-       
+               }   
+           }  
+       }     
    }
    
     void SwapString(String o,String c){
@@ -98,28 +91,49 @@ public class Person {
            
    public static void main(String[] args){
                
-        List <Person> man = new ArrayList<>();
+        ArrayList <Person> man = new ArrayList<>();
                Person ram = new Person();
-               ram.getInput(ram);
+               ram.firstName = "a";
+               ram.lastName  = "m";
+               ram.age       =  23;
+               ram.date      = "1";
+              // ram.getInput(ram);
                man.add(ram);
                      // ram.printOut(ram);
             
               
                Person lax = new Person();
-               lax.getInput(lax);
+               lax.firstName = "b";
+               lax.lastName  = "n";
+               lax.age       =  53;
+               lax.date      = "5";
                man.add(lax);
+               //lax.getInput(lax);
+               
          
                Person rax = new Person();
-               rax.getInput(rax);
+               rax.firstName = "c";
+               rax.lastName  = "o";
+               rax.age       =  3;
+               rax.date      = "4";
+               //rax.getInput(rax);
                man.add(rax);
                
                
                Person lam = new Person();
-               lam.getInput(lam);
+               lam.firstName = "d";
+               lam.lastName  = "p";
+               lam.age       =  20;
+               lam.date      = "11";
+               ///lam.getInput(lam);
                man.add(lam);
                
                Person rob = new Person();
-               rob.getInput(rob);
+               rob.firstName = "e";
+               rob.lastName  = "q";
+               rob.age       =  29;
+               rob.date      = "4";
+               //rob.getInput(rob);
                 man.add(rob);
                
               
@@ -137,6 +151,11 @@ public class Person {
              Person test = new Person();
                
                test.SortByAge(man);
+               System.out.println();
+     
+            for(int i =0;i<man.size()-1;i++){
+            test.printOut(man.get(i));
+       }
                
                
               //Person [] man = {ram,rax,lam,rob};
@@ -145,3 +164,4 @@ public class Person {
            }
     
 }
+ 
