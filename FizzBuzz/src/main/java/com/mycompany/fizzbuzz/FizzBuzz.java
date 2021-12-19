@@ -12,7 +12,7 @@ public class FizzBuzz {
     
     public static void main(String[] args){
         
-        printFizzBuzz(1000000);
+        printFizzBuzz(100);
         
     }
     
@@ -27,6 +27,14 @@ public class FizzBuzz {
             }else{
                 System.out.println(i);
             }
+        }
+        
+        System.out.println();
+        System.out.println();
+        int number = 1;
+        while (number <= 100) {
+            System.out.println(number % 15 == 0 ? "FizzBuzz" : number % 3 == 0 ? "Fizz" : number % 5 == 0 ? "Buzz" : number);
+            number++;
         }
     }
 }
